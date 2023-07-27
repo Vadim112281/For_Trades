@@ -1,0 +1,116 @@
+﻿@using Site_Trades.Models.RegLog
+@{
+    ViewData["Title"] = "Профіль";
+}
+<link rel="stylesheet" href="css/profile.css" asp-append-version="true" />
+
+  <header>
+        <div class="header">
+
+            <div class="header__container">
+                <img class="header__logo" />
+
+                <div class="header__navigation">
+                    <nav class="header__menu menu">
+                        <ul class="menu__body">
+                            <li class="menu__item">
+                                <a asp-controller="Home" asp-action="Index" class="menu__link">Про сайт</a>
+                                <a asp-controller="Trade" asp-action="Index" class="menu__link">Додати угоду</a>
+                                <a asp-controller="Profile" asp-action="Index" class="menu__link" asp-route-id="">Мій профіль</a>
+                                <a asp-controller="LogOut" asp-action="Index" class="menu__link">Вийти</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+<h1 class="title-profile">Профіль</h1>
+
+<!--Зробити типу в классі регестрації IsRegister-->
+
+
+
+
+<section class="bg-light">
+    <div class="container2">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-sm-5">
+                <div class="card card-style1 border-0">
+                    <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-4 mb-lg-0">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="...">
+                            </div>
+                            <div class="col-lg-6 px-xl-10">
+                                <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+                                    <div class="i">
+                                        
+                                            @foreach (var item in ForLogin.LogUsers)
+                                            {
+                                                <h3 class="h2 text-white mb-0">@item.Name</h3>
+                                            }
+                                            
+                                        
+                                        <span class="text-primary2">Трейдер</span>
+                                    </div>
+                                </div>
+                                <ul class="list-unstyled mb-1-9">
+                                    @foreach (var item in ForLogin.LogUsers)
+                                    {
+                                        <li class="mb-2 mb-xl-3 display-28"><span class="text-email">Email:</span> @item.Email</li>
+                                    }
+                                    
+                                </ul>
+                                <ul class="social-icon-style1 list-unstyled mb-0 ps-0">
+                                    <li><a href="#!"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#!"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#!"><i class="ti-pinterest"></i></a></li>
+                                    <li><a href="#!"><i class="ti-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="positions">
+                <div class="col-lg-12 mb-4 mb-sm-5">
+                    <div class="text-about-positions">
+                        <span class="text-position">Угоди</span>
+                        @for (int i = 0; i < 1; i++)
+                        {
+                            <p class="mb-0">Всього угод: @ForLogin.CountTrades[i]</p>
+                        }
+                        @for (int i = 0; i < 1; i++)
+                        {
+                            <p class="mb-0">Угод в плюс: @ForLogin.ProfitTrades[i]</p>
+                        }
+                        @for (int i = 0; i < 1; i++)
+                        {
+                            <p class="mb-0">Угод в мінус: @ForLogin.LoseTrades[i]</p>
+                        }
+                        
+                        
+                        @for (int i = 0; i < 1; i++)
+                        {
+                            <p class="mb-0">Прибуток у відсотках: @ForLogin.Profit[i] %</p>
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12 mb-4 mb-sm-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

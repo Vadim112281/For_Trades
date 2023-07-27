@@ -1,0 +1,70 @@
+﻿@using Site_Trades.ViewModels
+@using Site_Trades.Models.RegLog
+@model Site_Trades.Models.RegLog.Register
+
+
+
+@{
+    ViewData["Title"] = "Головна";
+}
+
+<header>
+    <div class="header">
+
+        <div class="header__container">
+            <img class="header__logo" />
+
+            <div class="header__navigation">
+                <nav class="header__menu menu">
+                    <ul class="menu__body">
+                        <li class="menu__item">
+                            <a asp-controller="Home" asp-action="Index" class="menu__link">Про сайт</a>
+                            <a asp-controller="Trade" asp-action="Index" class="menu__link">Додати угоду</a>
+                            <a asp-controller="Profile" asp-action="Index" class="menu__link" asp-route-id="">Мій профіль</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+
+    </div>
+</header>
+
+
+<div class="title">
+    <h1 class="title-main">Для чого цей сайт ?</h1>
+</div>
+
+<div class="block">
+    <div class="ltext">
+        <div class="left-text">
+            <p class="text-left">
+                Ну спочатку можна сказати, що цей сайт для трейдерів.
+                Саме цей сайт допоможе трейдерам слідкувати за їхніми угодами.
+                Є багато фішек на цьому сайті, щоб полегшити життя трейдерам.
+            </p>
+        </div>
+    </div>
+
+    <div class="ctext">
+        <div class="center-text">
+            <p class="text-center">
+                На цьому сайті трейдер зможе додати свою угоду.
+                Записати свій профіт або збиток.
+                Можна подивитися свою статистику.
+                Крутий сайт з крутими фішками для трейдерів!
+
+
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer class="footer">
+    Matok Company
+</footer>
+

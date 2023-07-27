@@ -1,0 +1,66 @@
+﻿@using Site_Trades.Models.RegLog
+@model Site_Trades.ViewModels.LoginViewModel
+
+
+@{
+    ViewData["Title"] = "Вхід у аккаунт";
+}
+
+<link rel="stylesheet" href="css/register.css" asp-append-version="true" />
+
+
+  <header>
+        <div class="header">
+
+            <div class="header__container">
+                <img class="header__logo" />
+
+                <div class="header__navigation">
+                    <nav class="header__menu menu">
+                        <ul class="menu__body">
+                            <li class="menu__item">
+                                <a asp-controller="Home" asp-action="Index" class="menu__link">Про сайт</a>
+                                <a asp-controller="Trade" asp-action="Index" class="menu__link">Додати угоду</a>
+                                <a asp-controller="Profile" asp-action="Index" class="menu__link" asp-route-id="">Мій профіль</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+
+
+<div class="block-form">
+    <div class="container3">
+        <form class="form-reg" method="POST">
+            <h2>Вхід в аккаунт</h2>
+
+            <div class="form-group">
+                <label class="email-title">Ім'я:</label>
+                <input type="text" asp-for="Name"  required >
+            </div>            
+            
+            <div class="form-group">
+                <label class="email-title">Почта:</label>
+                <input type="email" asp-for="Email"  required >
+            </div>
+            <div class="form-group">
+                <label class="password-title">Пароль:</label>
+                <input type="password" asp-for="Password" required >
+            </div>
+            <div class="form-group">
+                <button class="btn-reg" asp-controller="Login" asp-action="Index">
+
+                     Уввійти
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

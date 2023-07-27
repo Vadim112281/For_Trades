@@ -1,0 +1,116 @@
+.title-trade {
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 35px;
+    font-size: 50px;
+    padding-bottom: 40px;
+    transition: font-size .6s, color .4s;
+}
+
+    .title-trade:hover {
+        font-size: 60px;
+        color: #31d2f2;
+    }
+
+
+
+
+.input-container {
+    position: relative;
+}
+
+.styled-input {
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    .styled-input::placeholder {
+        color: #999;
+    }
+
+    .styled-input:focus {
+        border-color: #1e90ff;
+        box-shadow: 0 2px 8px rgba(30, 144, 255, 0.2);
+    }
+
+    /* Optional: Adding a button inside the input container */
+    .styled-input::after {
+        content: '\f002';
+        font-family: FontAwesome;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: #999;
+        pointer-events: none;
+    }
+
+    /* Optional: Style the placeholder when input is focused */
+    .styled-input:focus::placeholder {
+        color: #ccc;
+    }
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.styled-input {
+    padding-top: 10px;
+}
+
+
+.form-trade{
+    display: table-column;
+    justify-content: center;
+}
+
+
+.cool-button {
+    font-size: 20px;
+    padding: 10px 80px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-color: #1e90ff;
+    color: #fff;
+    box-shadow: 0 3px 8px rgba(30, 144, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    
+
+}
+
+    .cool-button::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: rotate(45deg);
+        transition: top 0.3s ease, left 0.3s ease;
+    }
+
+    .cool-button:hover {
+        background-color: #29b6f6;
+    }
+
+        .cool-button:hover::before {
+            top: 0;
+            left: 0;
+        }
+        

@@ -1,0 +1,62 @@
+﻿@model Trade
+
+@{
+    ViewData["Title"] = "Додати угоду";
+}
+
+<link rel="stylesheet" href="css/profile.css" asp-append-version="true" />
+<link rel="stylesheet" href="css/trade.css" asp-append-version="true" />
+
+
+  <header>
+        <div class="header">
+
+            <div class="header__container">
+                <img class="header__logo" />
+
+                <div class="header__navigation">
+                    <nav class="header__menu menu">
+                        <ul class="menu__body">
+                            <li class="menu__item">
+                                <a asp-controller="Home" asp-action="Index" class="menu__link">Про сайт</a>
+                                <a asp-controller="Trade" asp-action="Index" class="menu__link">Додати угоду</a>
+                                <a asp-controller="Profile" asp-action="Index" class="menu__link" asp-route-id="">Мій профіль</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+<h1 class="title-trade">Додати угоду</h1>
+
+
+
+
+<div class="input-block">
+    <div class="input-container">
+        <form  class="form-trade" method="post">
+            <input asp-for="Name" type="text" class="styled-input" placeholder="Назва крипти">
+            <p></p>
+
+            <input asp-for="Marzha" type="text" class="styled-input" placeholder="Маржа $">
+            <p></p>
+
+            <input asp-for="Profit" type="text" class="styled-input" placeholder="Профіт у %">
+            <p></p>
+
+            <input type="date"  asp-for="Date"  class="styled-input" name="Date" id="davaToday"> 
+            <p></p>
+
+            <button asp-controller="Trade" asp-action="Index" class="cool-button">Додати трейд</button>
+        </form>
+    </div>
+</div>
+
+
+<script>document.getElementById("davaToday").valueAsDate = new Date();</script>
